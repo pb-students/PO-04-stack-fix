@@ -31,7 +31,7 @@ public:
         // I was wrong... std::cerr is not in sync with std::cout so it randomly places messages either befor or after stdout...
         // Fortunately I can still use ANSI...
         std::cout << "\033[36m[DEBUG]\033[37m Destructor called (" << std::addressof(array) << ")\033[0m\n";
-        delete array;
+        delete[] array;
     }
 
     size_t push (T item) {
