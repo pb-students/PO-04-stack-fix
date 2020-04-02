@@ -1,6 +1,8 @@
 //
 // Created by waff on 3/27/20.
 //
+// Improved by FreeDOOM on 4/02/20
+//
 
 #ifndef UNTITLED4_STACK_H
 #define UNTITLED4_STACK_H
@@ -14,6 +16,12 @@ private:
     size_t max_size = 32;
 
 public:
+    Stack (const Stack& stack_to_copy){
+		array = stack_to_copy.array;
+		current_index = stack_to_copy.current_index;
+		max_size = stack_to_copy.max_size;
+		std::cout << "\033[36m[DEBUG]\033[37m Dupllication constructor called (" << std::addressof(array) << ")\033[0m\n";
+	}
     Stack (size_t n) {
         // The what? Cannot we just use a debugger?
         std::cout << "\033[36m[DEBUG]\033[37m Variable length constructor called (" << std::addressof(array) << ")\033[0m\n";
@@ -60,7 +68,7 @@ public:
     }
 
     bool empty () {
-        return current_index == 0;
+        return (current_index == 0);
     }
 };
 
