@@ -16,11 +16,11 @@ private:
     size_t max_size = 32;
 
 public:
-    Stack (const Stack& stack_to_copy){
-		array = stack_to_copy.array;
-		current_index = stack_to_copy.current_index;
-		max_size = stack_to_copy.max_size;
-		std::cout << "\033[36m[DEBUG]\033[37m Dupllication constructor called (" << std::addressof(array) << ")\033[0m\n";
+    Stack (const Stack& original){
+		array = original.array;
+		current_index = original.current_index;
+		max_size = original.max_size;
+		std::cout << "\033[36m[DEBUG]\033[37m Duplication constructor called (" << std::addressof(array) << ")\033[0m\n";
 	}
     Stack (size_t n) {
         // The what? Cannot we just use a debugger?
@@ -68,7 +68,7 @@ public:
     }
 
     bool empty () {
-        return (current_index == 0);
+        return current_index == 0;
     }
 };
 

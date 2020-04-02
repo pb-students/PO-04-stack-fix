@@ -4,7 +4,6 @@
 // Invalid version provided by the author of the exercise
 // What goes wrong? Double free.
 
-// Simple fix
 template<typename T>
 void external (Stack<T> stack, T item) {
     stack.push(item);
@@ -20,7 +19,6 @@ int main () {
     Stack<int> stack;
     stack.push(0);
 
-    // And simple fix
     external(stack, 1);
     external(stack, 2);
 
